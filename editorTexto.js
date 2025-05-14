@@ -133,3 +133,34 @@ function showSuggestion(event, suggestion) {
 function escapeRegExp(text) {
   return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
+
+
+document.getElementById('readText').addEventListener('click', function() {
+  const text = editor.innerText.trim();
+  if (text !== "") {
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'pt-BR';
+    speechSynthesis.speak(utterance);
+  } else {
+    alert('O editor está vazio.');
+  }
+});
+
+
+const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+recognition.lang = 'pt-BR'; 
+
+document.getElementById('voiceCorrection').addEventListener('click', function() {
+  recognition.start();
+});
+
+recognition.onresult = function(event) {
+  const result = event.results[0][0].transcript;
+  editor.innerHTML += result; 
+  updateCount();  
+};
+
+recognition.onerror = function(event) {
+  console.error("Erro no reconhecimento de fala: ", event.error);
+  alert("Houve um erro ao tentar reconhecer sua fala. Tente novamente.");
+};
