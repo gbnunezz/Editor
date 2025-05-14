@@ -1,3 +1,4 @@
+/* Reset de margem e padding e configuração da caixa de borda */
 * {
   margin: 0;
   padding: 0;
@@ -5,6 +6,7 @@
   font-family: Arial, sans-serif;
 }
 
+/* Estilo básico do corpo da página */
 body {
   background-color: #f4f4f4;
   color: #000;
@@ -16,6 +18,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Cabeçalho com estilo de fundo gradiente e título */
 .header {
   width: 100%;
   max-width: 960px;
@@ -30,6 +33,7 @@ body {
   margin-bottom: 1.5rem;
 }
 
+/* Barra de ferramentas */
 .toolbar {
   background-color: #fff;
   padding: 0.75rem;
@@ -44,6 +48,7 @@ body {
   justify-content: center;
 }
 
+/* Estilos para botões e seletores dentro da barra de ferramentas */
 .toolbar button,
 .toolbar select {
   padding: 0.5rem;
@@ -54,11 +59,13 @@ body {
   transition: background-color 0.2s;
 }
 
+/* Efeito hover nos botões e seletores */
 .toolbar button:hover,
 .toolbar select:hover {
   background-color: #e0e0e0;
 }
 
+/* Estilos do editor de texto */
 #editor {
   background-color: white;
   color: black;
@@ -74,10 +81,12 @@ body {
   transition: background-color 0.2s;
 }
 
+/* Efeito ao focar no editor de texto */
 #editor:focus {
   background-color: #f0f8ff;
 }
 
+/* Estilo da seção de status com contagem de palavras e caracteres */
 .status {
   margin-top: 1rem;
   font-size: 0.9rem;
@@ -87,6 +96,7 @@ body {
   justify-content: center;
 }
 
+/* Estilos para a lista de erros de gramática */
 .error-list {
   background-color: #fff4f4;
   border: 1px solid #ff4d4d;
@@ -100,6 +110,7 @@ body {
   box-shadow: 0 0 6px rgba(255, 0, 0, 0.1);
 }
 
+/* Estilos para as palavras com erros destacados */
 .error-highlight {
   background-color: yellow;
   color: red;
@@ -108,6 +119,7 @@ body {
   cursor: pointer;
 }
 
+/* Estilo para o tooltip de sugestões de correção */
 .error-tooltip {
   position: absolute;
   background-color: #ffcc00;
@@ -119,6 +131,7 @@ body {
   font-size: 0.9rem;
 }
 
+/* Responsividade para telas pequenas */
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
