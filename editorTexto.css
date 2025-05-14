@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.header {
+  width: 100%;
+  max-width: 960px;
+  background: linear-gradient(to right, #004080, #007bff);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1.5rem;
+}
+
+.toolbar {
+  background-color: #fff;
+  padding: 0.75rem;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  max-width: 960px;
+  width: 100%;
+  justify-content: center;
+}
+
+.toolbar button,
+.toolbar select {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.toolbar button:hover,
+.toolbar select:hover {
+  background-color: #e0e0e0;
+}
+
+#editor {
+  background-color: white;
+  color: black;
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 960px;
+  min-height: 300px;
+  height: 60vh;
+  overflow-y: auto;
+  transition: background-color 0.2s;
+}
+
+#editor:focus {
+  background-color: #f0f8ff;
+}
+
+.status {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.error-list {
+  background-color: #fff4f4;
+  border: 1px solid #ff4d4d;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 6px;
+  max-width: 960px;
+  width: 100%;
+  font-size: 0.95rem;
+  color: #b30000;
+  box-shadow: 0 0 6px rgba(255, 0, 0, 0.1);
+}
+
+.error-highlight {
+  background-color: yellow;
+  color: red;
+  border-bottom: 1px dotted red;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.error-tooltip {
+  position: absolute;
+  background-color: #ffcc00;
+  color: black;
+  padding: 5px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .toolbar {
+    justify-content: center;
+  }
+}

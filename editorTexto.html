@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Editor de Texto</title>
+  <link rel="stylesheet" href="./editorTexto.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+  <header class="header">
+    <h1>Editor de Texto</h1>
+  </header>
+
+  <div class="toolbar">
+    <button onclick="exec('bold')">Negrito</button>
+    <button onclick="exec('italic')">Itálico</button>
+    <button onclick="exec('underline')">Sublinhado</button>
+
+    <select id="fontFamilySelect">
+      <option value="Arial">Arial</option>
+      <option value="Times New Roman">Times New Roman</option>
+      <option value="Courier New">Courier New</option>
+    </select>
+
+    <select id="fontSizeSelect">
+      <option value="10">10pt</option>
+      <option value="12">12pt</option>
+      <option value="14" selected>14pt</option>
+      <option value="18">18pt</option>
+      <option value="24">24pt</option>
+    </select>
+
+    <button id="clearEditor">Limpar</button>
+    <button id="downloadContent">Download</button>
+    <button id="checkGrammar">Verificar Gramática</button>
+  </div>
+
+  <div id="editor" contenteditable="true"></div>
+
+  <div class="status">
+    <div id="wordCount">Palavras: 0</div>
+    <div id="charCount">Caracteres: 0</div>
+  </div>
+
+  <div id="grammarErrors" class="error-list"></div>
+
+  <script src="./editorTexto.js"></script>
+</body>
+</html>
